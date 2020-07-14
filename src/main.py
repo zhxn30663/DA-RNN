@@ -25,14 +25,14 @@ from torch.autograd import Variable
 from utils import *
 from model import *
 
-
+print('hello')
 def parse_args():
     """Parse arguments."""
     # Parameters settings
     parser = argparse.ArgumentParser(description="PyTorch implementation of paper 'A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction'")
 
     # Dataset setting
-    parser.add_argument('--dataroot', type=str, default="../nasdaq/nasdaq100_padding.csv", help='path to dataset')
+    parser.add_argument('--dataroot', type=str, default="nasdaq100_padding.csv", help='path to dataset')
     parser.add_argument('--batchsize', type=int, default=128, help='input batch size [128]')
 
     # Encoder / Decoder parameters setting
@@ -57,6 +57,7 @@ def main():
     # Read dataset
     print("==> Load dataset ...")
     X, y = read_data(args.dataroot, debug=False)
+
 
     # Initialize model
     print("==> Initialize DA-RNN model ...")
